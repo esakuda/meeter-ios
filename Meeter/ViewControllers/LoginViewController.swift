@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerForNotifications()
+        FBSDKLoginManager.new().logOut()
         if (FBSDKAccessToken.currentAccessToken() != nil) {
             self.performSegueWithIdentifier(mapSegue, sender: self)
         }

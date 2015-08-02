@@ -17,6 +17,11 @@ protocol MapBoundsDelegate {
 class MapViewController: UIViewController, GMSMapViewDelegate, MapBoundsDelegate {
     
     @IBOutlet weak var settingsButton: UIButton!
+    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var directionLabel: UILabel!
+    
+    
     @IBOutlet weak var mapView: GMSMapView!
     var viewModel : MapViewModel = MapViewModel()
     
@@ -46,7 +51,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, MapBoundsDelegate
     func initializeGoogleMaps() {
         self.mapView.delegate = self
         self.mapView.setMinZoom(minZoom, maxZoom: maxZoom)
-        self.mapView.settings.scrollGestures = false;
+        self.mapView.settings.scrollGestures = false
     }
     
     func registerForNotifications() {
@@ -72,6 +77,12 @@ class MapViewController: UIViewController, GMSMapViewDelegate, MapBoundsDelegate
     
     func getNorthEast() -> CLLocationCoordinate2D {
         return self.mapView.projection.visibleRegion().farRight
+    }
+    
+    func mapView(mapView: GMSMapView!, didTapMarker marker: GMSMarker!) -> Bool {
+//        self.userView.userName = self.viewModel
+//        self.mapView.addSubview(userView)
+        return true;
     }
 
 }
