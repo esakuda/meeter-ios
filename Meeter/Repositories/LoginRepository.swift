@@ -28,5 +28,23 @@ class LoginRepository {
                 print("ha ocurrido un error")
         })
     }
+    
+    func logout(success: (() -> ())?, failure:(() -> ())?) {
+        let url = "\(self.url)/users/logout"
+        let token = NSUserDefaults.standardUserDefaults().stringForKey("session")!
+        self.manager.POST(url, parameters: ["token": token], success: { operation, responseObject in
+            NSUserDefaults.standardUserDefaults().removeObjectForKey("session")
+            FBSDKLoginManager.new().logOut()
+            if let successClosure = success {
+                print("request mandada correctamente")
+                successClosure()
+            }
+            }, failure: { operation, error in
+                if let failureClosure = failure {
+                    print("request mandada correctamente")
+                    failureClosure()
+                }
+            })
+    }
 }
 
