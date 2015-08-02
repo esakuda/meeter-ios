@@ -30,4 +30,15 @@ class FacebookRepository {
             }
         })
     }
+    
+    func feedShareButton () -> FBSDKShareButton {
+        let content : FBSDKShareLinkContent = FBSDKShareLinkContent()
+        content.contentTitle = "Together"
+        content.imageURL = NSURL(string: "https://pbs.twimg.com/profile_images/613867159031300096/AtretVAp.jpg")
+        
+        let button : FBSDKShareButton = FBSDKShareButton()
+        button.shareContent = content
+        button.frame = CGRectMake((UIScreen.mainScreen().bounds.width - 100) * 0.5, 100, 80, 25)
+        return button
+    }
 }

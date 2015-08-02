@@ -20,7 +20,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate, MapBoundsDelegate
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var directionLabel: UILabel!
     
     
     @IBOutlet weak var mapView: GMSMapView!
@@ -50,6 +49,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, MapBoundsDelegate
         self.settingsButton.layer.cornerRadius = self.settingsButton.frame.size.height / 2
         self.settingsButton.backgroundColor = UIColor(red: 30/255.0, green: 139/255.0, blue: 216/255.0, alpha: 0.6)
         self.friendView.backgroundColor = UIColor(red: 98/255.0, green: 88/255.0, blue: 177/255.0, alpha: 0.6).colorWithAlphaComponent(0.7)
+        self.friendView.addSubview(FacebookRepository().feedShareButton())
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -111,10 +111,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate, MapBoundsDelegate
         
         for savedMarker in self.viewModel.markers {
             if (savedMarker.marker.position.latitude  == marker.position.latitude && savedMarker.marker.position.longitude == marker.position.longitude) {
-//                self.profileImageView = savedMarker.user.profileImageUrl!
                 self.nameLabel.text = savedMarker.user.name
                 self.getReverseGeocoding(marker.position.latitude, longitude: marker.position.longitude, success: { (placemark : CLPlacemark) in
-                    self.directionLabel.text = placemark.thoroughfare != nil ? placemark.thoroughfare! : nil
                     UIView.animateWithDuration(1.0, animations: {
                         self.friendView.alpha = 1
                     })

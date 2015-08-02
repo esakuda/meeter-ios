@@ -63,7 +63,7 @@ class ParseService {
                     if let lockey = alert["loc-key"] as? NSString {
                         if lockey == "NEW_NF" {
                             if let args = alert["loc-args"] as? NSArray {
-                                let message: AnyObject = args[2]
+                                let message: AnyObject = args[1]
                                 print(userInfo)
                                 let user : User = User(params: userInfo["data"]!["near_friends"] as! Dictionary<String, AnyObject>)
                                 let notificationData = ["publicity": message, "data":[user]]
