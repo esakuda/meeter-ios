@@ -16,7 +16,7 @@ class LoginRepository {
     let url = "http://192.168.1.31:3000"
 
     func sendUser(user: User, error: (() -> ())?, success: (() -> ())?) {
-        let parameters = ["name": user.userName, "token": NSUserDefaults.standardUserDefaults().stringForKey("session")!]
+        let parameters = ["name": user.name, "token": NSUserDefaults.standardUserDefaults().stringForKey("session")!]
         let url = "\(self.url)/users/login"
         manager.requestSerializer = AFJSONRequestSerializer()
         manager.POST(url, parameters: parameters, success: { operation, responseObject in

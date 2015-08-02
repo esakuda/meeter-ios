@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		180ED85B5E8A7DBFCA2138ED /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABA8A8818906D0369BF0CA0A /* libPods.a */; };
+		2D542D7B1B6E165600B5AA8A /* MarkerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D542D7A1B6E165600B5AA8A /* MarkerViewModel.swift */; };
+		2D542D7D1B6E165B00B5AA8A /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D542D7C1B6E165B00B5AA8A /* MapViewModel.swift */; };
+		2D542D7F1B6E166200B5AA8A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D542D7E1B6E166200B5AA8A /* MapViewController.swift */; };
+		2D542D821B6E166E00B5AA8A /* MapRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D542D801B6E166E00B5AA8A /* MapRepository.swift */; };
+		2D542D831B6E166E00B5AA8A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D542D811B6E166E00B5AA8A /* Repository.swift */; };
 		2D6439EA1B6D26E600C66216 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D6439E91B6D26E600C66216 /* Assets.xcassets */; };
 		2D6439F81B6D26E600C66216 /* MeeterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6439F71B6D26E600C66216 /* MeeterTests.swift */; };
 		2D643A0C1B6D2B9800C66216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D643A0B1B6D2B9800C66216 /* AppDelegate.swift */; };
@@ -44,6 +49,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D542D7A1B6E165600B5AA8A /* MarkerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerViewModel.swift; sourceTree = "<group>"; };
+		2D542D7C1B6E165B00B5AA8A /* MapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		2D542D7E1B6E166200B5AA8A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		2D542D801B6E166E00B5AA8A /* MapRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapRepository.swift; sourceTree = "<group>"; };
+		2D542D811B6E166E00B5AA8A /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		2D6439DF1B6D26E600C66216 /* Together.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Together.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D6439E91B6D26E600C66216 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D6439EE1B6D26E600C66216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -184,6 +194,8 @@
 		2D643A051B6D2B2D00C66216 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				2D542D7A1B6E165600B5AA8A /* MarkerViewModel.swift */,
+				2D542D7C1B6E165B00B5AA8A /* MapViewModel.swift */,
 				B972F0831B6D4A0E00696DCC /* LoginViewModel.swift */,
 			);
 			name = ViewModels;
@@ -194,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				B972F07D1B6D344800696DCC /* LoginViewController.swift */,
+				2D542D7E1B6E166200B5AA8A /* MapViewController.swift */,
 			);
 			name = ViewControllers;
 			path = Meeter/ViewControllers;
@@ -222,6 +235,8 @@
 			children = (
 				B9F166EC1B6D92C0005DB5AA /* FacebookRepository.swift */,
 				B9F166EE1B6DA092005DB5AA /* LoginRepository.swift */,
+				2D542D801B6E166E00B5AA8A /* MapRepository.swift */,
+				2D542D811B6E166E00B5AA8A /* Repository.swift */,
 			);
 			name = Repositories;
 			path = Meeter/Repositories;
@@ -397,13 +412,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D542D821B6E166E00B5AA8A /* MapRepository.swift in Sources */,
 				B9F166ED1B6D92C0005DB5AA /* FacebookRepository.swift in Sources */,
 				B972F07E1B6D344800696DCC /* LoginViewController.swift in Sources */,
 				2D643A0C1B6D2B9800C66216 /* AppDelegate.swift in Sources */,
+				2D542D7F1B6E166200B5AA8A /* MapViewController.swift in Sources */,
 				F4ADD71C1B6D41E1003F423C /* ParseService.swift in Sources */,
 				B972F0891B6D7FB200696DCC /* User.swift in Sources */,
 				B972F0841B6D4A0E00696DCC /* LoginViewModel.swift in Sources */,
+				2D542D7B1B6E165600B5AA8A /* MarkerViewModel.swift in Sources */,
 				B9F166EF1B6DA092005DB5AA /* LoginRepository.swift in Sources */,
+				2D542D7D1B6E165B00B5AA8A /* MapViewModel.swift in Sources */,
+				2D542D831B6E166E00B5AA8A /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +466,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -490,6 +511,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;

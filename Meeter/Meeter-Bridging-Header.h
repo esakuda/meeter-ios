@@ -14,6 +14,7 @@
 #import <Parse/Parse.h>
 #import <Parse/PFAnalytics.h>
 #import <Bolts/Bolts.h>
+#import "UIView+Toast.h"
 
 
 #endif

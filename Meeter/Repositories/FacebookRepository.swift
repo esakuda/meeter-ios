@@ -24,9 +24,8 @@ class FacebookRepository {
             else
             {
                 let userName : String = result ["name"] as! String
-                let userID : String = result ["id"] as! String
                 let profileImageUrl : String = result ["picture"]!["data"]!["url"] as! String
-                let user : User = User(userID: userID, userName: userName, profileImageUrl: profileImageUrl)
+                let user : User = User(userName: userName, profileImageUrl: profileImageUrl)
                 success(user)
             }
         })
