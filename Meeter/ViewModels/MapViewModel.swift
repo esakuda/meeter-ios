@@ -19,6 +19,7 @@ class MapViewModel: NSObject, CLLocationManagerDelegate {
     let firstLocationNotification = "didChangeLocation"
     let noAuthorizationNotification = "noAuthNotification"
     let didUpdateUserLocations = "didUpdateUserLocations"
+    let nearFriends = "new_near_friend"
     let mapRepository = MapRepository();
     
     let timeInterval : UInt64 = 10

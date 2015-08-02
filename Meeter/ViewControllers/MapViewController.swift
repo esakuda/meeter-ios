@@ -16,8 +16,9 @@ protocol MapBoundsDelegate {
 
 class MapViewController: UIViewController, GMSMapViewDelegate, MapBoundsDelegate {
     
+    @IBOutlet weak var friendView: UIView!
+    @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var settingsButton: UIButton!
-    @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var directionLabel: UILabel!
     
@@ -29,18 +30,21 @@ class MapViewController: UIViewController, GMSMapViewDelegate, MapBoundsDelegate
     let maxZoom : Float = 15
     let startingZoom : Float = 13
     var userViewModel : UserViewModel? = nil
+    var selectedMarker : GMSMarker? = nil;
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController!.navigationBarHidden = true
+        self.friendView.hidden = true
         self.initializeGoogleMaps()
         self.initializeLocationManager()
         self.registerForNotifications()
         self.view.layoutIfNeeded()
         self.settingsButton.layer.cornerRadius = self.settingsButton.frame.size.height / 2
         self.settingsButton.backgroundColor = UIColor(red: 30/255.0, green: 139/255.0, blue: 216/255.0, alpha: 0.6)
+        self.friendView.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.7)
     }
-    
+
     // MARK: - Initializers
     
     func initializeLocationManager() {
@@ -64,11 +68,15 @@ class MapViewController: UIViewController, GMSMapViewDelegate, MapBoundsDelegate
             print(errorMessage)
             self.view.makeToast(errorMessage, duration: 2.0, position: CSToastPositionBottom)
         })
-        NSNotificationCenter.defaultCenter().addObserverForName(viewModel.didUpdateUserLocations, object: nil, queue: NSOperationQueue.mainQueue(), usingBlock: { notification in
+        NSNotificationCenter.defaultCenter().addObserverForName(viewModel.nearFriends, object: nil, queue: NSOperationQueue.mainQueue(), usingBlock: { notification in
+            let users : [User] = notification.userInfo!["data"]! as! [User]
+            let publicity : String = notification.userInfo!["publicity"] as! String
+            self.viewModel.markers = MarkerViewModel.mapToMarkers(users, publicity: publicity)
             for markerViewModel in self.viewModel.markers {
                 markerViewModel.marker.map = self.mapView
             }
         })
+        NSNotificationCenter.defaultCenter()
     }
     
     func getSouthWest() -> CLLocationCoordinate2D {
@@ -80,6 +88,15 @@ class MapViewController: UIViewController, GMSMapViewDelegate, MapBoundsDelegate
     }
     
     func mapView(mapView: GMSMapView!, didTapMarker marker: GMSMarker!) -> Bool {
+        self.selectedMarker = marker
+        
+        for savedMarker in self.viewModel.markers {
+            if (savedMarker.marker == marker) {
+//                self.profileImageView = savedMarker.user.profileImageUrl!
+                self.nameLabel.text = savedMarker.user.name
+                self.directionLabel.text = savedMarker.user.name
+            }
+        }
 //        self.userView.userName = self.viewModel
 //        self.mapView.addSubview(userView)
         return true;

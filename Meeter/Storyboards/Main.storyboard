@@ -138,25 +138,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fdp-sE-3cS" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DyK-fk-ZDu">
                                 <rect key="frame" x="0.0" y="460" width="600" height="140"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dxx-rG-IvQ">
-                                        <rect key="frame" x="8" y="8" width="178" height="124"/>
+                                        <rect key="frame" x="8" y="8" width="150" height="124"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="178" id="Ey2-v3-64E"/>
+                                            <constraint firstAttribute="width" constant="150" id="Ey2-v3-64E"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="nombre" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zTb-Zr-rEn">
-                                        <rect key="frame" x="198" y="8" width="63" height="21"/>
-                                        <color key="backgroundColor" red="0.098039215690000001" green="0.098039215690000001" blue="0.098039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nombre" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zTb-Zr-rEn">
+                                        <rect key="frame" x="188" y="8" width="59" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4E-yh-8mc">
-                                        <rect key="frame" x="198" y="60" width="42" height="21"/>
+                                        <rect key="frame" x="188" y="60" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -166,17 +169,13 @@
                                 <constraints>
                                     <constraint firstItem="dxx-rG-IvQ" firstAttribute="leading" secondItem="DyK-fk-ZDu" secondAttribute="leading" constant="8" id="4P3-cq-fVj"/>
                                     <constraint firstItem="z4E-yh-8mc" firstAttribute="top" secondItem="zTb-Zr-rEn" secondAttribute="bottom" constant="31" id="B6F-ht-iwv"/>
-                                    <constraint firstItem="zTb-Zr-rEn" firstAttribute="leading" secondItem="dxx-rG-IvQ" secondAttribute="trailing" constant="12" id="Ff1-yy-OTZ"/>
+                                    <constraint firstItem="zTb-Zr-rEn" firstAttribute="leading" secondItem="dxx-rG-IvQ" secondAttribute="trailing" constant="30" id="Ff1-yy-OTZ"/>
                                     <constraint firstItem="dxx-rG-IvQ" firstAttribute="top" secondItem="DyK-fk-ZDu" secondAttribute="top" constant="8" id="Lo1-Rt-DTa"/>
                                     <constraint firstItem="zTb-Zr-rEn" firstAttribute="top" secondItem="DyK-fk-ZDu" secondAttribute="top" constant="8" id="We5-45-bwg"/>
                                     <constraint firstAttribute="bottom" secondItem="dxx-rG-IvQ" secondAttribute="bottom" constant="8" id="cK9-5p-Vbl"/>
                                     <constraint firstItem="z4E-yh-8mc" firstAttribute="leading" secondItem="zTb-Zr-rEn" secondAttribute="leading" id="e4Q-55-xmq"/>
                                     <constraint firstAttribute="height" constant="140" id="lO0-hr-MBf"/>
                                 </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdp-sE-3cS" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNg-r2-bpf">
                                 <rect key="frame" x="555" y="79" width="30" height="30"/>
@@ -206,23 +205,19 @@
                             <constraint firstItem="BAT-Ot-PpR" firstAttribute="top" secondItem="DyK-fk-ZDu" secondAttribute="bottom" id="52m-YY-ltm"/>
                             <constraint firstItem="DyK-fk-ZDu" firstAttribute="leading" secondItem="0yT-6L-UeE" secondAttribute="leading" id="JUz-cS-Jo3"/>
                             <constraint firstAttribute="trailing" secondItem="DyK-fk-ZDu" secondAttribute="trailing" id="M6w-3x-7ig"/>
-                            <constraint firstItem="fdp-sE-3cS" firstAttribute="width" secondItem="0yT-6L-UeE" secondAttribute="width" id="QaJ-Y9-V9T"/>
-                            <constraint firstItem="fdp-sE-3cS" firstAttribute="centerX" secondItem="0yT-6L-UeE" secondAttribute="centerX" id="RZ0-nw-T7O"/>
                             <constraint firstItem="DyK-fk-ZDu" firstAttribute="width" secondItem="0yT-6L-UeE" secondAttribute="width" id="hMA-hV-HWZ"/>
                             <constraint firstAttribute="trailing" secondItem="hNg-r2-bpf" secondAttribute="trailing" constant="15" id="hmW-Qi-wai"/>
                             <constraint firstItem="hNg-r2-bpf" firstAttribute="top" secondItem="myV-Ih-qec" secondAttribute="bottom" constant="15" id="iiI-xk-QYi"/>
-                            <constraint firstItem="fdp-sE-3cS" firstAttribute="centerY" secondItem="0yT-6L-UeE" secondAttribute="centerY" id="q7G-L0-VFD"/>
-                            <constraint firstItem="fdp-sE-3cS" firstAttribute="height" secondItem="0yT-6L-UeE" secondAttribute="height" id="xWw-jt-Vea"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qgM-Pv-sYR"/>
                     <connections>
                         <outlet property="directionLabel" destination="z4E-yh-8mc" id="UoM-L0-jj0"/>
+                        <outlet property="friendView" destination="DyK-fk-ZDu" id="QoM-ze-i5a"/>
                         <outlet property="mapView" destination="fdp-sE-3cS" id="Ola-NA-Ee0"/>
                         <outlet property="nameLabel" destination="zTb-Zr-rEn" id="Aey-7M-vIH"/>
-                        <outlet property="profileImageView" destination="dxx-rG-IvQ" id="Han-Fd-nE5"/>
+                        <outlet property="profileImageView" destination="dxx-rG-IvQ" id="kzb-IX-8GL"/>
                         <outlet property="settingsButton" destination="hNg-r2-bpf" id="grR-i5-H5M"/>
-                        <outlet property="userImageView" destination="dxx-rG-IvQ" id="2vl-aP-raH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VME-yF-tR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
