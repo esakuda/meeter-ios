@@ -7,3 +7,6 @@
 */
 
 "no_map_auth" = "Map was not authorized, could not get information";
+
+/* Push messages */
+"NEW_NF" = "%@ (y %@ personas más) se encuentran cerca tuyo!\n%@";

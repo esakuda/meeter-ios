@@ -12,12 +12,12 @@ class LoginViewModel: NSObject, FBSDKLoginButtonDelegate {
     let loginRepository : LoginRepository = LoginRepository.sharedInstance
     let facebookPermissions : [String] = ["public_profile", "email", "user_friends"]
     let didLoginNotification = "didLoginNotification"
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     var user : User? = nil
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         print("User Logged In")
-        
         if ((error) != nil)
         {
             // TODO: Process error
@@ -33,7 +33,7 @@ class LoginViewModel: NSObject, FBSDKLoginButtonDelegate {
     
     func loadUser() {
         facebookRepository.fetchUserData(nil, success:
-            {user in self.user = user;
+            {user in self.user = user
                 self.loginRepository.sendUser(user, error: nil, success: {
                     NSNotificationCenter.defaultCenter().postNotificationName(self.didLoginNotification, object: nil)
                 })
@@ -41,6 +41,7 @@ class LoginViewModel: NSObject, FBSDKLoginButtonDelegate {
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
+        appDelegate.removeUserFromParse()
         print("User Logged Out")
     }
     
