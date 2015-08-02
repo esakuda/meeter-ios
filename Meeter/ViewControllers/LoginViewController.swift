@@ -25,6 +25,7 @@ class LoginViewController: UIViewController {
             facebookLoginButton.readPermissions = loginViewModel.facebookPermissions
             facebookLoginButton.delegate = self.loginViewModel
         }
+        self.navigationController?.navigationBar.hidden = true
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

@@ -13,7 +13,7 @@ import GoogleMaps
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    let kGoogleMapsKey = "AIzaSyAiQ0FdVOaRV1PSpxVAUhNHbO_uitK6KQ0";
+    let kGoogleMapsKey = "AIzaSyCzg8EHAQlfeNooXmR6jUkCmEqoFKMj4PA";
     var parseService = ParseService()
     
     let applicationId = "lmbbIAwSCPFWLd53a5PONP4nDklAV2y9rNmpHqO5"

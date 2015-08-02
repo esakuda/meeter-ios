@@ -12,6 +12,11 @@ import Foundation
 class MapRepository : Repository {
     
     func sendLocation(location: CLLocation, southWest: CLLocationCoordinate2D, northEast: CLLocationCoordinate2D, success: (() -> ())?, failure: ((NSError) -> ())?) {
+        if(FBSDKAccessToken.currentAccessToken() == nil || FBSDKAccessToken.currentAccessToken().tokenString == nil) {
+            return
+        }
+        print(FBSDKAccessToken.currentAccessToken())
+        print(FBSDKAccessToken.currentAccessToken().tokenString)
         let parameters = [  "token":FBSDKAccessToken.currentAccessToken().tokenString,
                             "latitude":location.coordinate.latitude,
                             "longitude":location.coordinate.longitude,

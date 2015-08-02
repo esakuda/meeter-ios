@@ -18,6 +18,7 @@
 		2D6439EA1B6D26E600C66216 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D6439E91B6D26E600C66216 /* Assets.xcassets */; };
 		2D6439F81B6D26E600C66216 /* MeeterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6439F71B6D26E600C66216 /* MeeterTests.swift */; };
 		2D643A0C1B6D2B9800C66216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D643A0B1B6D2B9800C66216 /* AppDelegate.swift */; };
+		2DE9456E1B6E3FE400E17085 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE9456D1B6E3FE400E17085 /* SettingsViewController.swift */; };
 		74D20E4E731F6235E4423713 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		B972F07C1B6D305300696DCC /* Main.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B972F07B1B6D305300696DCC /* Main.Storyboard */; };
 		B972F07E1B6D344800696DCC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972F07D1B6D344800696DCC /* LoginViewController.swift */; };
@@ -65,6 +66,7 @@
 		2D6439F71B6D26E600C66216 /* MeeterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeeterTests.swift; sourceTree = "<group>"; };
 		2D6439F91B6D26E600C66216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D643A0B1B6D2B9800C66216 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2DE9456D1B6E3FE400E17085 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		6D3B08C2EF0AF48F4D47C66E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		ABA8A8818906D0369BF0CA0A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5B839B580ED5E5DBD7E88BE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			children = (
 				B972F07D1B6D344800696DCC /* LoginViewController.swift */,
 				2D542D7E1B6E166200B5AA8A /* MapViewController.swift */,
+				2DE9456D1B6E3FE400E17085 /* SettingsViewController.swift */,
 			);
 			name = ViewControllers;
 			path = Meeter/ViewControllers;
@@ -428,6 +431,7 @@
 				B972F0891B6D7FB200696DCC /* User.swift in Sources */,
 				B972F0841B6D4A0E00696DCC /* LoginViewModel.swift in Sources */,
 				2D542D7B1B6E165600B5AA8A /* MarkerViewModel.swift in Sources */,
+				2DE9456E1B6E3FE400E17085 /* SettingsViewController.swift in Sources */,
 				2D542D871B6E1C6D00B5AA8A /* UserViewModel.swift in Sources */,
 				B9F166EF1B6DA092005DB5AA /* LoginRepository.swift in Sources */,
 				2D542D7D1B6E165B00B5AA8A /* MapViewModel.swift in Sources */,

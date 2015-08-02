@@ -16,6 +16,7 @@ protocol MapBoundsDelegate {
 
 class MapViewController: UIViewController, GMSMapViewDelegate, MapBoundsDelegate {
     
+    @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var mapView: GMSMapView!
     var viewModel : MapViewModel = MapViewModel()
     
@@ -30,6 +31,9 @@ class MapViewController: UIViewController, GMSMapViewDelegate, MapBoundsDelegate
         self.initializeGoogleMaps()
         self.initializeLocationManager()
         self.registerForNotifications()
+        self.view.layoutIfNeeded()
+        self.settingsButton.layer.cornerRadius = self.settingsButton.frame.size.height / 2
+        self.settingsButton.backgroundColor = UIColor(red: 30/255.0, green: 139/255.0, blue: 216/255.0, alpha: 0.6)
     }
     
     // MARK: - Initializers
