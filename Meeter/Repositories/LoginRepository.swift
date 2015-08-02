@@ -20,8 +20,9 @@ class LoginRepository {
         let url = "\(self.url)/users/login"
         manager.requestSerializer = AFJSONRequestSerializer()
         manager.POST(url, parameters: parameters, success: { operation, responseObject in
+            user.id = responseObject["id"] as? Int
+            NSUserDefaults.standardUserDefaults().setInteger(user.id!, forKey: "user")
             if let successClosure = success {
-                user.id = responseObject["id"] as? Int
                 successClosure()
             }
             }, failure: { operation, error in
@@ -31,20 +32,28 @@ class LoginRepository {
     
     func logout(success: (() -> ())?, failure:(() -> ())?) {
         let url = "\(self.url)/users/logout"
-        let token = NSUserDefaults.standardUserDefaults().stringForKey("session")!
-        self.manager.POST(url, parameters: ["token": token], success: { operation, responseObject in
-            NSUserDefaults.standardUserDefaults().removeObjectForKey("session")
-            FBSDKLoginManager.new().logOut()
-            if let successClosure = success {
-                print("request mandada correctamente")
-                successClosure()
-            }
-            }, failure: { operation, error in
-                if let failureClosure = failure {
+        if let token = NSUserDefaults.standardUserDefaults().stringForKey("session") {
+            self.manager.POST(url, parameters: ["token": token], success: { operation, responseObject in
+                NSUserDefaults.standardUserDefaults().removeObjectForKey("session")
+                FBSDKLoginManager.new().logOut()
+                NSUserDefaults.standardUserDefaults().removeObjectForKey("user")
+                if let successClosure = success {
                     print("request mandada correctamente")
-                    failureClosure()
+                    successClosure()
                 }
+                }, failure: { operation, error in
+                    if let failureClosure = failure {
+                        print("request mandada correctamente")
+                        failureClosure()
+                    }
             })
+        }
+        FBSDKLoginManager.new().logOut()
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("session")
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("user")
+        if(success != nil) {
+            success!()
+        }
     }
 }
 

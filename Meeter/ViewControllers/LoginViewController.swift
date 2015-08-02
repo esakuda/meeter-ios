@@ -19,6 +19,9 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         self.registerForNotifications()
         if (FBSDKAccessToken.currentAccessToken() != nil) {
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            let userId : NSNumber = NSUserDefaults.standardUserDefaults().objectForKey("user")! as! NSNumber
+            appDelegate.setUserToParse(userId)
             self.performSegueWithIdentifier(mapSegue, sender: self)
         }
         else {

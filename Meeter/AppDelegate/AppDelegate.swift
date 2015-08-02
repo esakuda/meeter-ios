@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         parseService.setAppData(applicationId, clientKey: clientKey)
         parseService.registerAppForPushNotifications(application, launchOptions: launchOptions)
+        parseService.removeInstallation()
         GMSServices.provideAPIKey(kGoogleMapsKey);
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
