@@ -40,8 +40,9 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.4.0):
     - FBSDKCoreKit
-  - Google-Maps-iOS-SDK (1.9.2)
+  - GoogleMaps (1.10.1)
   - HexColors (2.3.0)
+  - JSONModel (1.1.0)
   - ObjectiveSugar (1.1.0)
   - Parse (1.7.5.3):
     - Bolts/Tasks (>= 1.2.0)
@@ -56,8 +57,9 @@ DEPENDENCIES:
   - FBSDKCoreKit (~> 4.4)
   - FBSDKLoginKit (~> 4.4)
   - FBSDKShareKit (~> 4.4)
-  - Google-Maps-iOS-SDK
+  - GoogleMaps
   - HexColors
+  - JSONModel
   - ObjectiveSugar (~> 1.1.0)
   - Parse (~> 1.7.2)
   - SDWebImage (~> 3.7)
@@ -70,8 +72,9 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: 75bdd75c980e811db218488d99dd93b7740f4474
   FBSDKLoginKit: 02a9254a4c132412fa03577b0d53e936d068a7fb
   FBSDKShareKit: a42865f20ba2d1cc548c4d0f73ad22cff6377ddb
-  Google-Maps-iOS-SDK: 7f89cc1edb3ca239a410e5bc83cd1e060db3a289
+  GoogleMaps: ebf08677f181d9c2dcdbd1721d206f02beccc9b1
   HexColors: 6ad3947c3447a055a3aa8efa859def096351fe5f
+  JSONModel: ec77e9865236a7a09d9cf7668df6b4b328d9ec1d
   ObjectiveSugar: a6a25f23d657c19df0a0b972466d5b5ca9f5295c
   Parse: 373adbb1ad2e34d383542c3b28f678c49ebe4881
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84

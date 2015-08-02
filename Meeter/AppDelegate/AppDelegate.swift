@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    let kGoogleMapsKey = "AIzaSyAiQ0FdVOaRV1PSpxVAUhNHbO_uitK6KQ0";
     var parseService = ParseService()
     
     let applicationId = "lmbbIAwSCPFWLd53a5PONP4nDklAV2y9rNmpHqO5"
@@ -20,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         parseService.setAppData(applicationId, clientKey: clientKey)
         parseService.registerAppForPushNotifications(application, launchOptions: launchOptions)
-        
+        GMSServices.provideAPIKey(kGoogleMapsKey);
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 

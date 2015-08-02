@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D6439DE1B6D26E600C66216"
-               BuildableName = "Meeter.app"
-               BlueprintName = "Meeter"
+               BuildableName = "Together.app"
+               BlueprintName = "Together"
                ReferencedContainer = "container:Meeter.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,8 +43,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D6439DE1B6D26E600C66216"
-            BuildableName = "Meeter.app"
-            BlueprintName = "Meeter"
+            BuildableName = "Together.app"
+            BlueprintName = "Together"
             ReferencedContainer = "container:Meeter.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -66,8 +66,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D6439DE1B6D26E600C66216"
-            BuildableName = "Meeter.app"
-            BlueprintName = "Meeter"
+            BuildableName = "Together.app"
+            BlueprintName = "Together"
             ReferencedContainer = "container:Meeter.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -85,8 +85,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D6439DE1B6D26E600C66216"
-            BuildableName = "Meeter.app"
-            BlueprintName = "Meeter"
+            BuildableName = "Together.app"
+            BlueprintName = "Together"
             ReferencedContainer = "container:Meeter.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

@@ -1,0 +1,9 @@
+/* 
+  File.strings
+  Meeter
+
+  Created by Damian on 8/1/15.
+  Copyright © 2015 Meeter. All rights reserved.
+*/
+
+"no_map_auth" = "Map was not authorized, could not get information";
