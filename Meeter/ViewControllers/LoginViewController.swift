@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerForNotifications()
+        FBSDKLoginManager.new().logOut()
         if (FBSDKAccessToken.currentAccessToken() != nil) {
             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             let userId : NSNumber = NSUserDefaults.standardUserDefaults().objectForKey("user")! as! NSNumber
@@ -39,6 +40,7 @@ class LoginViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var didPressFakeButton: UIButton!
     func registerForNotifications() {
         NSNotificationCenter.defaultCenter().addObserverForName(self.loginViewModel.didLoginNotification, object: nil, queue: NSOperationQueue.mainQueue(), usingBlock: { notification in
             self.performSegueWithIdentifier(self.mapSegue, sender: self)

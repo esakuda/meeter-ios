@@ -54,7 +54,9 @@ class ParseService {
     }
     
     func handleNotificacion(application: UIApplication, userInfo: [NSObject : AnyObject]) {
-        PFPush.handlePush(userInfo)
+        if (application.applicationState == UIApplicationState.Background) {
+            PFPush.handlePush(userInfo)
+        }
         if application.applicationState == UIApplicationState.Inactive || (application.applicationState == UIApplicationState.Background) || (application.applicationState == UIApplicationState.Active) {
             if let aps = userInfo["aps"] as? NSDictionary {
                 if let alert = aps["alert"] as? NSDictionary {
@@ -62,7 +64,9 @@ class ParseService {
                         if lockey == "NEW_NF" {
                             if let args = alert["loc-args"] as? NSArray {
                                 let message: AnyObject = args[2]
-                                let notificationData = ["publicity": message, "data":userInfo["data"]!]
+                                print(userInfo)
+                                let user : User = User(params: userInfo["data"]!["near_friends"] as! Dictionary<String, AnyObject>)
+                                let notificationData = ["publicity": message, "data":[user]]
                                 NSNotificationCenter.defaultCenter().postNotificationName(notificationKey, object:nil, userInfo:notificationData)
                             }
                         }
