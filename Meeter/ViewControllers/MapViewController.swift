@@ -17,14 +17,16 @@ protocol MapBoundsDelegate {
 class MapViewController: UIViewController, GMSMapViewDelegate, MapBoundsDelegate {
     
     @IBOutlet weak var mapView: GMSMapView!
-    var viewModel : MapViewModel = MapViewModel();
+    var viewModel : MapViewModel = MapViewModel()
     
     let minZoom : Float = 12
     let maxZoom : Float = 15
     let startingZoom : Float = 13
+    var userViewModel : UserViewModel? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController!.navigationBarHidden = true
         self.initializeGoogleMaps()
         self.initializeLocationManager()
         self.registerForNotifications()
@@ -40,7 +42,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, MapBoundsDelegate
     func initializeGoogleMaps() {
         self.mapView.delegate = self
         self.mapView.setMinZoom(minZoom, maxZoom: maxZoom)
-//        self.mapView.settings.scrollGestures = false;
+        self.mapView.settings.scrollGestures = false;
     }
     
     func registerForNotifications() {

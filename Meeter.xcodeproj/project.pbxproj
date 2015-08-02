@@ -13,6 +13,8 @@
 		2D542D7F1B6E166200B5AA8A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D542D7E1B6E166200B5AA8A /* MapViewController.swift */; };
 		2D542D821B6E166E00B5AA8A /* MapRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D542D801B6E166E00B5AA8A /* MapRepository.swift */; };
 		2D542D831B6E166E00B5AA8A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D542D811B6E166E00B5AA8A /* Repository.swift */; };
+		2D542D871B6E1C6D00B5AA8A /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D542D861B6E1C6D00B5AA8A /* UserViewModel.swift */; };
+		2D542D891B6E1F1700B5AA8A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D542D881B6E1F1700B5AA8A /* Localizable.strings */; };
 		2D6439EA1B6D26E600C66216 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D6439E91B6D26E600C66216 /* Assets.xcassets */; };
 		2D6439F81B6D26E600C66216 /* MeeterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6439F71B6D26E600C66216 /* MeeterTests.swift */; };
 		2D643A0C1B6D2B9800C66216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D643A0B1B6D2B9800C66216 /* AppDelegate.swift */; };
@@ -54,6 +56,8 @@
 		2D542D7E1B6E166200B5AA8A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		2D542D801B6E166E00B5AA8A /* MapRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapRepository.swift; sourceTree = "<group>"; };
 		2D542D811B6E166E00B5AA8A /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		2D542D861B6E1C6D00B5AA8A /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		2D542D881B6E1F1700B5AA8A /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		2D6439DF1B6D26E600C66216 /* Together.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Together.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D6439E91B6D26E600C66216 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D6439EE1B6D26E600C66216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 				2D6439E91B6D26E600C66216 /* Assets.xcassets */,
 				2D6439EE1B6D26E600C66216 /* Info.plist */,
 				B972F0851B6D5FE100696DCC /* Meeter-Bridging-Header.h */,
+				2D542D881B6E1F1700B5AA8A /* Localizable.strings */,
 			);
 			path = Meeter;
 			sourceTree = "<group>";
@@ -197,6 +202,7 @@
 				2D542D7A1B6E165600B5AA8A /* MarkerViewModel.swift */,
 				2D542D7C1B6E165B00B5AA8A /* MapViewModel.swift */,
 				B972F0831B6D4A0E00696DCC /* LoginViewModel.swift */,
+				2D542D861B6E1C6D00B5AA8A /* UserViewModel.swift */,
 			);
 			name = ViewModels;
 			path = Meeter/ViewModels;
@@ -361,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B972F07C1B6D305300696DCC /* Main.Storyboard in Resources */,
+				2D542D891B6E1F1700B5AA8A /* Localizable.strings in Resources */,
 				2D6439EA1B6D26E600C66216 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,6 +428,7 @@
 				B972F0891B6D7FB200696DCC /* User.swift in Sources */,
 				B972F0841B6D4A0E00696DCC /* LoginViewModel.swift in Sources */,
 				2D542D7B1B6E165600B5AA8A /* MarkerViewModel.swift in Sources */,
+				2D542D871B6E1C6D00B5AA8A /* UserViewModel.swift in Sources */,
 				B9F166EF1B6DA092005DB5AA /* LoginRepository.swift in Sources */,
 				2D542D7D1B6E165B00B5AA8A /* MapViewModel.swift in Sources */,
 				2D542D831B6E166E00B5AA8A /* Repository.swift in Sources */,
