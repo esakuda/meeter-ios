@@ -1,25 +1,52 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8164.2" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="35f-4C-xaM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8135.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Login-->
+        <scene sceneID="OzS-yK-OJs">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Login" id="35f-4C-xaM" customClass="LoginViewController" customModule="Together" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="N8Y-Pg-xnm"/>
+                        <viewControllerLayoutGuide type="bottom" id="MLb-mB-nwS"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="uCE-7I-yWI">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jvy-h2-7wa" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="277" y="498" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Login_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Hlz-Wr-0kK">
+                                <rect key="frame" x="139" y="157" width="322" height="287"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="322" id="J5Q-Of-kRc"/>
+                                    <constraint firstAttribute="height" constant="287" id="UAc-ms-DZA"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Hlz-Wr-0kK" firstAttribute="centerX" secondItem="uCE-7I-yWI" secondAttribute="centerX" id="H3q-48-MZj"/>
+                            <constraint firstItem="Jvy-h2-7wa" firstAttribute="centerX" secondItem="uCE-7I-yWI" secondAttribute="centerX" id="MgM-JD-0Mu"/>
+                            <constraint firstItem="MLb-mB-nwS" firstAttribute="top" secondItem="Jvy-h2-7wa" secondAttribute="bottom" constant="72" id="VjB-oP-2bp"/>
+                            <constraint firstItem="Hlz-Wr-0kK" firstAttribute="centerY" secondItem="uCE-7I-yWI" secondAttribute="centerY" id="wPc-Uk-cz5"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="facebookLoginButton" destination="Jvy-h2-7wa" id="tfk-jn-F9z"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ua1-g0-KLq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="674" y="458"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Login_logo" width="640" height="640"/>
+    </resources>
 </document>

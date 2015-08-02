@@ -7,18 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D6439E81B6D26E600C66216 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D6439E61B6D26E600C66216 /* Main.storyboard */; };
 		2D6439EA1B6D26E600C66216 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D6439E91B6D26E600C66216 /* Assets.xcassets */; };
 		2D6439ED1B6D26E600C66216 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D6439EB1B6D26E600C66216 /* LaunchScreen.storyboard */; };
 		2D6439F81B6D26E600C66216 /* MeeterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6439F71B6D26E600C66216 /* MeeterTests.swift */; };
 		2D643A0C1B6D2B9800C66216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D643A0B1B6D2B9800C66216 /* AppDelegate.swift */; };
-		2D643A0E1B6D2CE800C66216 /* BORRAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D643A0D1B6D2CE800C66216 /* BORRAR.swift */; };
-		2D643A101B6D2CFB00C66216 /* BORRAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D643A0F1B6D2CFB00C66216 /* BORRAR.swift */; };
-		2D643A121B6D2D0400C66216 /* BORRAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D643A111B6D2D0400C66216 /* BORRAR.swift */; };
-		2D643A141B6D2D0D00C66216 /* BORRAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D643A131B6D2D0D00C66216 /* BORRAR.swift */; };
-		2D643A161B6D2D1500C66216 /* BORRAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D643A151B6D2D1500C66216 /* BORRAR.swift */; };
-		2D643A181B6D2D4500C66216 /* BORRAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D643A171B6D2D4500C66216 /* BORRAR.swift */; };
-		2D643A1A1B6D2D4C00C66216 /* BORRAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D643A191B6D2D4C00C66216 /* BORRAR.swift */; };
+		74D20E4E731F6235E4423713 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8DEB6F2D0769EB0F1BE4202 /* libPods.a */; };
+		B972F07C1B6D305300696DCC /* Main.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B972F07B1B6D305300696DCC /* Main.Storyboard */; };
+		B972F07E1B6D344800696DCC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972F07D1B6D344800696DCC /* LoginViewController.swift */; };
+		B972F0841B6D4A0E00696DCC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972F0831B6D4A0E00696DCC /* LoginViewModel.swift */; };
+		B972F0891B6D7FB200696DCC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972F0881B6D7FB200696DCC /* User.swift */; };
+		B9F166ED1B6D92C0005DB5AA /* FacebookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F166EC1B6D92C0005DB5AA /* FacebookRepository.swift */; };
+		B9F166EF1B6DA092005DB5AA /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F166EE1B6DA092005DB5AA /* LoginRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,8 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2D6439DF1B6D26E600C66216 /* Meeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D6439E71B6D26E600C66216 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2D6439DF1B6D26E600C66216 /* Together.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Together.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D6439E91B6D26E600C66216 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D6439EC1B6D26E600C66216 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D6439EE1B6D26E600C66216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -41,13 +39,16 @@
 		2D6439F71B6D26E600C66216 /* MeeterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeeterTests.swift; sourceTree = "<group>"; };
 		2D6439F91B6D26E600C66216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D643A0B1B6D2B9800C66216 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2D643A0D1B6D2CE800C66216 /* BORRAR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BORRAR.swift; sourceTree = "<group>"; };
-		2D643A0F1B6D2CFB00C66216 /* BORRAR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BORRAR.swift; sourceTree = "<group>"; };
-		2D643A111B6D2D0400C66216 /* BORRAR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BORRAR.swift; sourceTree = "<group>"; };
-		2D643A131B6D2D0D00C66216 /* BORRAR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BORRAR.swift; sourceTree = "<group>"; };
-		2D643A151B6D2D1500C66216 /* BORRAR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BORRAR.swift; sourceTree = "<group>"; };
-		2D643A171B6D2D4500C66216 /* BORRAR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BORRAR.swift; sourceTree = "<group>"; };
-		2D643A191B6D2D4C00C66216 /* BORRAR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BORRAR.swift; sourceTree = "<group>"; };
+		3DB357F556AE7C49F33F509C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B8DEB6F2D0769EB0F1BE4202 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B972F07B1B6D305300696DCC /* Main.Storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.Storyboard; sourceTree = "<group>"; };
+		B972F07D1B6D344800696DCC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B972F0831B6D4A0E00696DCC /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		B972F0851B6D5FE100696DCC /* Meeter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Meeter-Bridging-Header.h"; sourceTree = "<group>"; };
+		B972F0881B6D7FB200696DCC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B9F166EC1B6D92C0005DB5AA /* FacebookRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookRepository.swift; sourceTree = "<group>"; };
+		B9F166EE1B6DA092005DB5AA /* LoginRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
+		F437920FAEEA7329F7C8792A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74D20E4E731F6235E4423713 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,13 +85,15 @@
 				2D6439E11B6D26E600C66216 /* Meeter */,
 				2D6439F61B6D26E600C66216 /* MeeterTests */,
 				2D6439E01B6D26E600C66216 /* Products */,
+				B9484186FC3F7C7308241D46 /* Pods */,
+				93CCC403D98335A6A9926EB3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		2D6439E01B6D26E600C66216 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2D6439DF1B6D26E600C66216 /* Meeter.app */,
+				2D6439DF1B6D26E600C66216 /* Together.app */,
 				2D6439F31B6D26E600C66216 /* MeeterTests.xctest */,
 			);
 			name = Products;
@@ -101,6 +105,7 @@
 				2D6439E91B6D26E600C66216 /* Assets.xcassets */,
 				2D6439EB1B6D26E600C66216 /* LaunchScreen.storyboard */,
 				2D6439EE1B6D26E600C66216 /* Info.plist */,
+				B972F0851B6D5FE100696DCC /* Meeter-Bridging-Header.h */,
 			);
 			path = Meeter;
 			sourceTree = "<group>";
@@ -117,7 +122,6 @@
 		2D643A021B6D2B1300C66216 /* FoundationCategories */ = {
 			isa = PBXGroup;
 			children = (
-				2D643A0D1B6D2CE800C66216 /* BORRAR.swift */,
 			);
 			name = FoundationCategories;
 			path = Meeter/FoundationCategories;
@@ -126,7 +130,6 @@
 		2D643A031B6D2B1900C66216 /* UIKitCategories */ = {
 			isa = PBXGroup;
 			children = (
-				2D643A0F1B6D2CFB00C66216 /* BORRAR.swift */,
 			);
 			name = UIKitCategories;
 			path = Meeter/FoundationCategories/UIKitCategories;
@@ -135,7 +138,6 @@
 		2D643A041B6D2B2800C66216 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2D643A151B6D2D1500C66216 /* BORRAR.swift */,
 			);
 			name = Views;
 			path = Meeter/Views;
@@ -144,7 +146,7 @@
 		2D643A051B6D2B2D00C66216 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				2D643A171B6D2D4500C66216 /* BORRAR.swift */,
+				B972F0831B6D4A0E00696DCC /* LoginViewModel.swift */,
 			);
 			name = ViewModels;
 			path = Meeter/ViewModels;
@@ -153,7 +155,7 @@
 		2D643A061B6D2B3500C66216 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				2D643A191B6D2D4C00C66216 /* BORRAR.swift */,
+				B972F07D1B6D344800696DCC /* LoginViewController.swift */,
 			);
 			name = ViewControllers;
 			path = Meeter/ViewControllers;
@@ -162,7 +164,7 @@
 		2D643A071B6D2B6700C66216 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				2D6439E61B6D26E600C66216 /* Main.storyboard */,
+				B972F07B1B6D305300696DCC /* Main.Storyboard */,
 			);
 			name = Storyboards;
 			path = Meeter/Storyboards;
@@ -171,7 +173,7 @@
 		2D643A081B6D2B8100C66216 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2D643A111B6D2D0400C66216 /* BORRAR.swift */,
+				B972F0881B6D7FB200696DCC /* User.swift */,
 			);
 			name = Models;
 			path = Meeter/Models;
@@ -180,7 +182,8 @@
 		2D643A091B6D2B8E00C66216 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				2D643A131B6D2D0D00C66216 /* BORRAR.swift */,
+				B9F166EC1B6D92C0005DB5AA /* FacebookRepository.swift */,
+				B9F166EE1B6DA092005DB5AA /* LoginRepository.swift */,
 			);
 			name = Repositories;
 			path = Meeter/Repositories;
@@ -195,24 +198,43 @@
 			path = Meeter/AppDelegate;
 			sourceTree = "<group>";
 		};
+		93CCC403D98335A6A9926EB3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B8DEB6F2D0769EB0F1BE4202 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B9484186FC3F7C7308241D46 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3DB357F556AE7C49F33F509C /* Pods.debug.xcconfig */,
+				F437920FAEEA7329F7C8792A /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2D6439DE1B6D26E600C66216 /* Meeter */ = {
+		2D6439DE1B6D26E600C66216 /* Together */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D6439FC1B6D26E600C66216 /* Build configuration list for PBXNativeTarget "Meeter" */;
+			buildConfigurationList = 2D6439FC1B6D26E600C66216 /* Build configuration list for PBXNativeTarget "Together" */;
 			buildPhases = (
+				14FD1995A84EFAF01B4928E5 /* Check Pods Manifest.lock */,
 				2D6439DB1B6D26E600C66216 /* Sources */,
 				2D6439DC1B6D26E600C66216 /* Frameworks */,
 				2D6439DD1B6D26E600C66216 /* Resources */,
+				6F95D7E9A317751B6AC6EC5B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Meeter;
+			name = Together;
 			productName = Meeter;
-			productReference = 2D6439DF1B6D26E600C66216 /* Meeter.app */;
+			productReference = 2D6439DF1B6D26E600C66216 /* Together.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2D6439F21B6D26E600C66216 /* MeeterTests */ = {
@@ -239,6 +261,7 @@
 		2D6439D71B6D26E600C66216 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Meeter;
 				TargetAttributes = {
@@ -264,7 +287,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2D6439DE1B6D26E600C66216 /* Meeter */,
+				2D6439DE1B6D26E600C66216 /* Together */,
 				2D6439F21B6D26E600C66216 /* MeeterTests */,
 			);
 		};
@@ -275,9 +298,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B972F07C1B6D305300696DCC /* Main.Storyboard in Resources */,
 				2D6439ED1B6D26E600C66216 /* LaunchScreen.storyboard in Resources */,
 				2D6439EA1B6D26E600C66216 /* Assets.xcassets in Resources */,
-				2D6439E81B6D26E600C66216 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,19 +313,50 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		14FD1995A84EFAF01B4928E5 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6F95D7E9A317751B6AC6EC5B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2D6439DB1B6D26E600C66216 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9F166ED1B6D92C0005DB5AA /* FacebookRepository.swift in Sources */,
+				B972F07E1B6D344800696DCC /* LoginViewController.swift in Sources */,
 				2D643A0C1B6D2B9800C66216 /* AppDelegate.swift in Sources */,
-				2D643A161B6D2D1500C66216 /* BORRAR.swift in Sources */,
-				2D643A101B6D2CFB00C66216 /* BORRAR.swift in Sources */,
-				2D643A181B6D2D4500C66216 /* BORRAR.swift in Sources */,
-				2D643A141B6D2D0D00C66216 /* BORRAR.swift in Sources */,
-				2D643A0E1B6D2CE800C66216 /* BORRAR.swift in Sources */,
-				2D643A121B6D2D0400C66216 /* BORRAR.swift in Sources */,
-				2D643A1A1B6D2D4C00C66216 /* BORRAR.swift in Sources */,
+				B972F0891B6D7FB200696DCC /* User.swift in Sources */,
+				B972F0841B6D4A0E00696DCC /* LoginViewModel.swift in Sources */,
+				B9F166EF1B6DA092005DB5AA /* LoginRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,21 +373,12 @@
 /* Begin PBXTargetDependency section */
 		2D6439F51B6D26E600C66216 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D6439DE1B6D26E600C66216 /* Meeter */;
+			target = 2D6439DE1B6D26E600C66216 /* Together */;
 			targetProxy = 2D6439F41B6D26E600C66216 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2D6439E61B6D26E600C66216 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2D6439E71B6D26E600C66216 /* Base */,
-			);
-			name = Main.storyboard;
-			path = ..;
-			sourceTree = "<group>";
-		};
 		2D6439EB1B6D26E600C66216 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -428,23 +473,36 @@
 		};
 		2D6439FD1B6D26E600C66216 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DB357F556AE7C49F33F509C /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Meeter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meeter.Meeter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Meeter/Meeter-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		2D6439FE1B6D26E600C66216 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F437920FAEEA7329F7C8792A /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Meeter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meeter.Meeter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Meeter/Meeter-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -484,13 +542,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D6439FC1B6D26E600C66216 /* Build configuration list for PBXNativeTarget "Meeter" */ = {
+		2D6439FC1B6D26E600C66216 /* Build configuration list for PBXNativeTarget "Together" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D6439FD1B6D26E600C66216 /* Debug */,
 				2D6439FE1B6D26E600C66216 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2D6439FF1B6D26E600C66216 /* Build configuration list for PBXNativeTarget "MeeterTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +558,7 @@
 				2D643A011B6D26E600C66216 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
