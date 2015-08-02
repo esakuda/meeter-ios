@@ -55,7 +55,7 @@ class ParseService {
     
     func handleNotificacion(application: UIApplication, userInfo: [NSObject : AnyObject]) {
         PFPush.handlePush(userInfo)
-        if application.applicationState == UIApplicationState.Inactive || (application.applicationState == UIApplicationState.Background) {
+        if application.applicationState == UIApplicationState.Inactive || (application.applicationState == UIApplicationState.Background) || (application.applicationState == UIApplicationState.Active) {
             PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo)
             if let aps = userInfo["aps"] as? NSDictionary {
                 if let alert = aps["alert"] as? NSDictionary {
