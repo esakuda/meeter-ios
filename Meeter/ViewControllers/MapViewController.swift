@@ -31,18 +31,35 @@ class MapViewController: UIViewController, GMSMapViewDelegate, MapBoundsDelegate
     let startingZoom : Float = 13
     var userViewModel : UserViewModel? = nil
     var selectedMarker : GMSMarker? = nil;
+    var markersHidden = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController!.navigationBarHidden = true
-        self.friendView.hidden = true
+        self.view.layoutIfNeeded()
+        self.friendView.alpha = 0
+        self.friendView.layer.cornerRadius = 6
+        self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.height / 2
+        self.profileImageView.clipsToBounds = true
+        self.profileImageView.layer.masksToBounds = true
+        
         self.initializeGoogleMaps()
         self.initializeLocationManager()
         self.registerForNotifications()
         self.view.layoutIfNeeded()
         self.settingsButton.layer.cornerRadius = self.settingsButton.frame.size.height / 2
         self.settingsButton.backgroundColor = UIColor(red: 30/255.0, green: 139/255.0, blue: 216/255.0, alpha: 0.6)
-        self.friendView.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.7)
+        self.friendView.backgroundColor = UIColor(red: 98/255.0, green: 88/255.0, blue: 177/255.0, alpha: 0.6).colorWithAlphaComponent(0.7)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.viewModel.stopUpdating()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if(self.viewModel.timer != nil) {
+            self.viewModel.startUpdating()
+        }
     }
 
     // MARK: - Initializers
@@ -69,14 +86,16 @@ class MapViewController: UIViewController, GMSMapViewDelegate, MapBoundsDelegate
             self.view.makeToast(errorMessage, duration: 2.0, position: CSToastPositionBottom)
         })
         NSNotificationCenter.defaultCenter().addObserverForName(viewModel.nearFriends, object: nil, queue: NSOperationQueue.mainQueue(), usingBlock: { notification in
-            let users : [User] = notification.userInfo!["data"]! as! [User]
-            let publicity : String = notification.userInfo!["publicity"] as! String
-            self.viewModel.markers = MarkerViewModel.mapToMarkers(users, publicity: publicity)
-            for markerViewModel in self.viewModel.markers {
-                markerViewModel.marker.map = self.mapView
+            if(!self.markersHidden) {
+                print(notification.userInfo!["data"]!)
+                let users : [User] = notification.userInfo!["data"]! as! [User]
+                let publicity : String = notification.userInfo!["publicity"] as! String
+                self.viewModel.markers = MarkerViewModel.mapToMarkers(users, publicity: publicity)
+                for markerViewModel in self.viewModel.markers {
+                    markerViewModel.marker.map = self.mapView
+                }
             }
         })
-        NSNotificationCenter.defaultCenter()
     }
     
     func getSouthWest() -> CLLocationCoordinate2D {
@@ -91,15 +110,52 @@ class MapViewController: UIViewController, GMSMapViewDelegate, MapBoundsDelegate
         self.selectedMarker = marker
         
         for savedMarker in self.viewModel.markers {
-            if (savedMarker.marker == marker) {
+            if (savedMarker.marker.position.latitude  == marker.position.latitude && savedMarker.marker.position.longitude == marker.position.longitude) {
 //                self.profileImageView = savedMarker.user.profileImageUrl!
                 self.nameLabel.text = savedMarker.user.name
-                self.directionLabel.text = savedMarker.user.name
+                self.getReverseGeocoding(marker.position.latitude, longitude: marker.position.longitude, success: { (placemark : CLPlacemark) in
+                    self.directionLabel.text = placemark.thoroughfare != nil ? placemark.thoroughfare! : nil
+                    UIView.animateWithDuration(1.0, animations: {
+                        self.friendView.alpha = 1
+                    })
+                })
             }
         }
-//        self.userView.userName = self.viewModel
-//        self.mapView.addSubview(userView)
         return true;
     }
+    
+    func mapView(mapView: GMSMapView!, didTapAtCoordinate coordinate: CLLocationCoordinate2D) {
+        self.selectedMarker = nil
+        UIView.animateWithDuration(1.0, animations: {
+            self.friendView.alpha = 0
+        })
+    }
 
+    @IBAction func didPressFakeButton(sender: AnyObject) {
+        for marker in self.viewModel.markers {
+            marker.marker.map = markersHidden ? nil : self.mapView;
+        }
+        markersHidden = !markersHidden
+    }
+    
+    func getReverseGeocoding(latitude: CLLocationDegrees, longitude: CLLocationDegrees, success: ((CLPlacemark) -> ())?) {
+        let location = CLLocation(latitude: latitude, longitude: longitude)
+        CLGeocoder().reverseGeocodeLocation(location, completionHandler: {(placemarks, error) -> Void in
+            if error != nil {
+                print("Reverse geocoder failed")
+                return
+            }
+            
+            if placemarks != nil && placemarks!.count > 0 {
+                let pm = placemarks![0]
+                print(pm.locality)
+                if success != nil {
+                    success!(pm)
+                }
+            }
+            else {
+                print("Problem with the data received from geocoder")
+            }
+        })
+    }
 }

@@ -15,6 +15,8 @@ class MapViewModel: NSObject, CLLocationManagerDelegate {
     var markers : [MarkerViewModel] = []
     var firstLocationUpdate : Bool = true
     var mapBoundsDelegate : MapBoundsDelegate? = nil
+    var timer : NSTimer? = nil
+    
     
     let firstLocationNotification = "didChangeLocation"
     let noAuthorizationNotification = "noAuthNotification"
@@ -94,12 +96,25 @@ class MapViewModel: NSObject, CLLocationManagerDelegate {
     }
     
     func startUpdating() {
-        NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("forceUpdateLocation"), userInfo: nil, repeats: true)
+        if(self.timer != nil) {
+            dispatch_async(dispatch_get_main_queue(), {
+                self.timer!.invalidate()
+            })
+        }
+        dispatch_async(dispatch_get_main_queue(), {
+            self.timer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("forceUpdateLocation"), userInfo: nil, repeats: true)
+        })
     }
     
     func forceUpdateLocation() {
         self.locationAuthorizationManager.stopUpdatingLocation()
         self.locationAuthorizationManager.startUpdatingLocation()
+    }
+    
+    func stopUpdating() {
+        dispatch_async(dispatch_get_main_queue(), {
+            self.timer!.invalidate()
+        })
     }
     
 }

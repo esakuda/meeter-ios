@@ -26,7 +26,7 @@ class MarkerViewModel {
             let marker = GMSMarker();
             marker.position = CLLocationCoordinate2D(latitude: user.latitude!, longitude: user.longitude!)
             marker.icon = UIImage(named:"Layer-1")
-            marker.appearAnimation = kGMSMarkerAnimationPop
+            marker.appearAnimation = kGMSMarkerAnimationNone
             return MarkerViewModel(marker: marker, user: user, publicity: publicity)
         })
     }

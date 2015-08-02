@@ -37,6 +37,7 @@ class LoginViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var didPressFakeButton: UIButton!
     func registerForNotifications() {
         NSNotificationCenter.defaultCenter().addObserverForName(self.loginViewModel.didLoginNotification, object: nil, queue: NSOperationQueue.mainQueue(), usingBlock: { notification in
             self.performSegueWithIdentifier(self.mapSegue, sender: self)
