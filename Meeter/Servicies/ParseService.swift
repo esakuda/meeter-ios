@@ -10,6 +10,8 @@ import Foundation
 
 class ParseService {
     
+    let notificationKey = "new_near_friend"
+    
     func setAppData(applicationId: String, clientKey: String) {
         Parse.setApplicationId(applicationId, clientKey: clientKey)
     }
@@ -51,10 +53,43 @@ class ParseService {
         }
     }
     
-    func handleNotificaciont(application: UIApplication, userInfo: [NSObject : AnyObject]) {
+    func handleNotificacion(application: UIApplication, userInfo: [NSObject : AnyObject]) {
         PFPush.handlePush(userInfo)
-        if application.applicationState == UIApplicationState.Inactive {
+        if application.applicationState == UIApplicationState.Inactive || (application.applicationState == UIApplicationState.Background) {
             PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo)
+            if let aps = userInfo["aps"] as? NSDictionary {
+                if let alert = aps["alert"] as? NSDictionary {
+                    if let lockey = alert["loc-key"] as? NSString {
+                        if lockey == "NEW_NF" {
+                            if let args = alert["loc-args"] as? NSArray {
+                                let message: AnyObject = args[2]
+                                let notificationData = ["publicity": message, "data":userInfo["data"]!]
+                                NSNotificationCenter.defaultCenter().postNotificationName(notificationKey, object:nil, userInfo:notificationData)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func setUser(userId: NSNumber) {
+        let installation = PFInstallation.currentInstallation()
+        installation.setObject(userId, forKey: "user_id")
+        installation.saveInBackground()
+    }
+    
+    func removeInstallation () {
+        let installation = PFInstallation.currentInstallation()
+        installation.removeObjectForKey("user_id")
+         installation.saveInBackground()
+    }
+    
+    func handleBasicNotification () {
+        let installation = PFInstallation.currentInstallation()
+        if (installation.badge != 0) {
+            installation.badge = 0
+            installation.saveEventually()
         }
     }
 }
